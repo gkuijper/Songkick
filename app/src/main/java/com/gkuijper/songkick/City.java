@@ -1,10 +1,12 @@
 package com.gkuijper.songkick;
 
+import java.io.Serializable;
+
 /**
  * Created by Gabrielle on 06-08-17.
  */
 
-public class City {
+public class City implements Serializable {
     private String name;
     private String country;
     private int id;

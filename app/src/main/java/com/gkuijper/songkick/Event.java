@@ -9,17 +9,17 @@ import java.util.Date;
  */
 
 public class Event implements Serializable{
-    private String name, time, type, value;
+    private String name, time, type, venue;
     private Date startdate, enddate;
     private double price;
     private City city;
     private ArrayList<Performance> performances;
 
-    public Event(String name, String time, String type, String value, Date startdate, Date enddate, double price, City city, ArrayList<Performance> performances) {
+    public Event(String name, String time, String type, String venue, Date startdate, Date enddate, double price, City city, ArrayList<Performance> performances) {
         this.name = name;
         this.time = time;
         this.type = type;
-        this.value = value;
+        this.venue = venue;
         this.startdate = startdate;
         this.enddate = enddate;
         this.price = price;
@@ -54,12 +54,12 @@ public class Event implements Serializable{
         this.type = type;
     }
 
-    public String getValue() {
-        return value;
+    public String getVenue() {
+        return venue;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setVenue(String venue) {
+        this.venue = venue;
     }
 
     public Date getStartdate() {
@@ -108,7 +108,7 @@ public class Event implements Serializable{
                 "name='" + name + '\'' +
                 ", time='" + time + '\'' +
                 ", type='" + type + '\'' +
-                ", value='" + value + '\'' +
+                ", venue='" + venue + '\'' +
                 ", startdate=" + startdate +
                 ", enddate=" + enddate +
                 ", price=" + price +
