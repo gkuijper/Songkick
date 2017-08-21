@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gkuijper.songkick">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,7 +24,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".SavedEventsActivity" />
-        <activity android:name=".SavedArtistsActivity"></activity>
+        <activity android:name=".SavedArtistsActivity" />
+        <activity android:name=".EventSearchActivity"></activity>
     </application>
 
 </manifest>
