@@ -10,22 +10,21 @@ import java.util.Date;
 
 public class Event implements Serializable{
     private String name, time, type, venue;
-    private Date startdate, enddate;
+    private String startdate, enddate;
     private double price;
     private City city;
     private ArrayList<Performance> performances;
 
-    public Event(String name, String time, String type, String venue, Date startdate, Date enddate, double price, City city, ArrayList<Performance> performances) {
+    public Event(String name, String time, String type, String venue, String startdate, String enddate, ArrayList<Performance> performances) {
         this.name = name;
         this.time = time;
         this.type = type;
         this.venue = venue;
         this.startdate = startdate;
         this.enddate = enddate;
-        this.price = price;
-        this.city = city;
         this.performances = performances;
     }
+
 
     public Event() {
     }
@@ -62,19 +61,19 @@ public class Event implements Serializable{
         this.venue = venue;
     }
 
-    public Date getStartdate() {
+    public String getStartdate() {
         return startdate;
     }
 
-    public void setStartdate(Date startdate) {
+    public void setStartdate(String startdate) {
         this.startdate = startdate;
     }
 
-    public Date getEnddate() {
+    public String getEnddate() {
         return enddate;
     }
 
-    public void setEnddate(Date enddate) {
+    public void setEnddate(String enddate) {
         this.enddate = enddate;
     }
 

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -53,7 +54,7 @@ public class EventAdapter extends BaseAdapter {
             viewHolder.event = (TextView) convertView.findViewById(R.id.event_row_id);
             viewHolder.tijdstip = (TextView) convertView.findViewById(R.id.datum_tijdstip_id);
             viewHolder.locatie = (TextView) convertView.findViewById(R.id.locatie_id);
-            viewHolder.afbeelding = (ImageView) convertView.findViewById(R.id.afbeelding_id);
+            //viewHolder.afbeelding = (ImageButton) convertView.findViewById(R.id.afbeelding_id);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (EventAdapter.ViewHolder) convertView.getTag();
@@ -61,9 +62,12 @@ public class EventAdapter extends BaseAdapter {
         final Event event = currentList.get(position);
 
         viewHolder.event.setText(event.getName());
-        viewHolder.tijdstip.setText(event.getStartdate() + event.getTime());
+        if (event.getTime().contains("null")) {
+            event.setTime("N/A");
+        }
+        viewHolder.tijdstip.setText(event.getStartdate() + " " +  event.getTime());
         viewHolder.locatie.setText(event.getVenue());
-        viewHolder.afbeelding.setImageResource(R.drawable.ic_menu_camera);
+       // viewHolder.afbeelding.setImageResource(R.drawable.ic_menu_camera);
 
 
         return convertView;
@@ -71,6 +75,6 @@ public class EventAdapter extends BaseAdapter {
 
     private static class ViewHolder {
         private TextView event, tijdstip, locatie;
-        private ImageView afbeelding;
+        private ImageButton afbeelding;
     }
 }
