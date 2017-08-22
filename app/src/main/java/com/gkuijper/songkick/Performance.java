@@ -14,6 +14,9 @@ public class Performance implements Serializable {
         this.name = name;
         this.billing = billing;
     }
+    public Performance() {
+
+    }
 
     public String getName() {
         return name;

@@ -129,7 +129,7 @@ public class EventAPIConnector extends AsyncTask<String, Void, String>{
                         } else{
                             enddateString = "N/A";
                         }
-
+                        String id = eventdetails.optString("id");
 
                         //JSONArray performances = events.getJSONObject(u).getJSONArray("performance");
                         JSONArray performances = eventdetails.getJSONArray("performance");
@@ -145,7 +145,7 @@ public class EventAPIConnector extends AsyncTask<String, Void, String>{
                         }
 
                         Log.i("performances", performanceArray.toString());
-                        Event event = new Event(name, startTimeString, type, venue, startdateString, enddateString, performanceArray);
+                        Event event = new Event(name, startTimeString, type, venue, startdateString, enddateString, performanceArray, id);
                         listener.onEventAvailable(event);
 
                     }

@@ -9,13 +9,15 @@ import java.util.Date;
  */
 
 public class Event implements Serializable{
-    private String name, time, type, venue;
+    private String name, time, type, venue, eventID;
     private String startdate, enddate;
     private double price;
     private City city;
     private ArrayList<Performance> performances;
+    private boolean isSaved;
 
-    public Event(String name, String time, String type, String venue, String startdate, String enddate, ArrayList<Performance> performances) {
+
+    public Event(String name, String time, String type, String venue, String startdate, String enddate, ArrayList<Performance> performances, String eventID) {
         this.name = name;
         this.time = time;
         this.type = type;
@@ -23,6 +25,7 @@ public class Event implements Serializable{
         this.startdate = startdate;
         this.enddate = enddate;
         this.performances = performances;
+        this.eventID = eventID;
     }
 
 
@@ -99,6 +102,22 @@ public class Event implements Serializable{
 
     public void setPerformances(ArrayList<Performance> performances) {
         this.performances = performances;
+    }
+
+    public String getEventID() {
+        return eventID;
+    }
+
+    public void setEventID(String eventID) {
+        this.eventID = eventID;
+    }
+
+    public boolean isSaved() {
+        return isSaved;
+    }
+
+    public void setSaved(boolean saved) {
+        isSaved = saved;
     }
 
     @Override
